@@ -11,14 +11,6 @@ class UserController {
       admin: Yup.boolean(),
     });
 
-    //VALIDAÇÃO DE CAMPOS ERRO GENÉRICO
-    // if (!(await schema.isValid(request.body))) {
-    //   return response
-    //     .status(400)
-    //     .json({ error: "Make sure your data is correct" });
-    // }
-
-    //VALIDAÇÃO DE DIVERSOS ERROS ESPECIFICADOS TRY CATCH
     try {
       await schema.validateSync(request.body, { abortEarly: false });
     } catch (err) {
